@@ -1,23 +1,17 @@
 var webpack = require('webpack');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-  context: __dirname,//path.join(__dirname, 'app'),
+  context: __dirname,
   entry: {
-    scripts: './app/index.jsx'
+    scripts: './demo/demo.jsx'
   },
   output: {
-    filename: './assets/scripts/[name].[hash].js'
+    filename: './dist/[name].js'
   },
-  plugins: [
-    
-  ],
   module: {
     preLoaders: [{
-      test: /\.jsx$/,
+      test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'eslint-loader',
       'plugins': [
